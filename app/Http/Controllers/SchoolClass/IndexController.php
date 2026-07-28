@@ -10,8 +10,8 @@ class IndexController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke()
     {
-        return "ini adalah halaman daftar kelas";
+        return "Menampilkan halaman daftar kelas";
     }
 }
