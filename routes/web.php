@@ -42,30 +42,30 @@ Route::name('students.')->prefix('students')->group(function() {
 
 // Manajemen Data Guru (Action Controller)
 Route::name('teachers.')->prefix('teachers')->group(function() {
-    // Halaman Daftar Siswa
+    // Halaman Daftar Guru
     Route::get('/', [TeacherController::class, 'index'])->name('index');
 
-    // Halaman Detail Siswa
+    // Halaman Detail Guru
     Route::get('//{id}', [TeacherController::class, 'show'])->name('show');
 
-    // Halaman Tambah Siswa
+    // Halaman Tambah Guru
     Route::get('//create', [TeacherController::class, 'create'])->name('create');
 
-    // Halaman Edit Siswa
+    // Halaman Edit Guru
     Route::get('//{id}/edit', [TeacherController::class, 'edit'])->name('edit');
 
-    //Logika Tambah Siswa
+    //Logika Tambah Guru
     Route::post('/', [TeacherController::class, 'store'])->name('store');
 
-    // Logika Edit Siswa
+    // Logika Edit Guru
     Route::put('//{id}', [TeacherController::class, 'update'])->name('update');
 
-    // Logika Hapus Siswa
+    // Logika Hapus Guru
     Route::delete('//{id}', [TeacherController::class, 'destroy'])->name('destroy');
 });
 
-// Manajemen Data School Class (Invokable Controller)
-Route::name('schoolclass.')->prefix('schoolclass')->group(function() {
+// Manajemen Data Kelas (Invokable Controller)
+Route::name('classes.')->prefix('classes')->group(function() {
     // Halaman Daftar Siswa
     Route::get('/', IndexController::class)->name('index');
 
@@ -89,7 +89,7 @@ Route::name('schoolclass.')->prefix('schoolclass')->group(function() {
 });
 
 //Manajemen Data Kejuruan (Resource)
-Route::resource('classes', MajorController::class);
+Route::resource('majors', MajorController::class);
 
 
 
