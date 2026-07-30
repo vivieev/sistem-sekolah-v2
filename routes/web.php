@@ -22,22 +22,22 @@ Route::name('students.')->prefix('students')->group(function() {
     Route::get('/', [StudentController::class, 'index'])->name('index');
 
     // Halaman Detail Siswa
-    Route::get('//{id}', [StudentController::class, 'show'])->name('show');
+    Route::get('/{id}', [StudentController::class, 'show'])->name('show')->whereNumber('id');
 
     // Halaman Tambah Siswa
-    Route::get('//create', [StudentController::class, 'create'])->name('create');
+    Route::get('/create', [StudentController::class, 'create'])->name('create');
 
     // Halaman Edit Siswa
-    Route::get('//{id}/edit', [StudentController::class, 'edit'])->name('edit');
+    Route::get('/{id}/edit', [StudentController::class, 'edit'])->name('edit');
 
     //Logika Tambah Siswa
     Route::post('/', [StudentController::class, 'store'])->name('store');
 
     // Logika Edit Siswa
-    Route::put('//{id}', [StudentController::class, 'update'])->name('update');
+    Route::put('/{id}', [StudentController::class, 'update'])->name('update');
 
     // Logika Hapus Siswa
-    Route::delete('//{id}', [StudentController::class, 'destroy'])->name('destroy');
+    Route::delete('/{id}', [StudentController::class, 'destroy'])->name('destroy');
 });
 
 // Manajemen Data Guru (Action Controller)
@@ -46,22 +46,22 @@ Route::name('teachers.')->prefix('teachers')->group(function() {
     Route::get('/', [TeacherController::class, 'index'])->name('index');
 
     // Halaman Detail Guru
-    Route::get('//{id}', [TeacherController::class, 'show'])->name('show');
+    Route::get('/{id}', [TeacherController::class, 'show'])->name('show')->whereNumber('id');
 
     // Halaman Tambah Guru
-    Route::get('//create', [TeacherController::class, 'create'])->name('create');
+    Route::get('/create', [TeacherController::class, 'create'])->name('create');
 
     // Halaman Edit Guru
-    Route::get('//{id}/edit', [TeacherController::class, 'edit'])->name('edit');
+    Route::get('/{id}/edit', [TeacherController::class, 'edit'])->name('edit');
 
     //Logika Tambah Guru
     Route::post('/', [TeacherController::class, 'store'])->name('store');
 
     // Logika Edit Guru
-    Route::put('//{id}', [TeacherController::class, 'update'])->name('update');
+    Route::put('/{id}', [TeacherController::class, 'update'])->name('update');
 
     // Logika Hapus Guru
-    Route::delete('//{id}', [TeacherController::class, 'destroy'])->name('destroy');
+    Route::delete('/{id}', [TeacherController::class, 'destroy'])->name('destroy');
 });
 
 // Manajemen Data Kelas (Invokable Controller)

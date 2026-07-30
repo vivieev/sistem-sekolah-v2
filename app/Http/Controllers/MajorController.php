@@ -49,8 +49,7 @@ class MajorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update
-    )
+    public function update()
     {
         return "Melakukan perubahan data jurursan";
     }
