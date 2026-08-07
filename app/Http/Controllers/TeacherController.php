@@ -8,22 +8,56 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        return "Menampilkan halaman daftar guru";
+        $title = 'Sistem Sekolah - Daftar Guru';
+        $teachers = [
+            [
+                'id' => 1,
+                'nip' => '198501012024',
+                'name' => 'Budi Santoso',
+                'gender' => 'Laki-Laki',
+                'subject' => 'Akuntansi Dasar',
+                'phone_number' => '081234560001',
+                'status' => 'Aktif',
+            ],
+            [
+                'id' => 2,
+                'nip' => '198703152024',
+                'name' => 'Siti Aminah',
+                'gender' => 'Perempuan',
+                'subject' => 'Jaringan Komputer',
+                'phone_number' => '081234560002',
+                'status' => 'Aktif',
+            ]
+        ];
+
+        return view('teachers.index', [
+            'title' => $title,
+            'teachers' => $teachers,
+        ]);
     }
 
     public function show(string $id)
     {
-        return "Menampilkan guru dengan ID: {$id}";
+        $title = 'Lembar Guru - Sistem Sekolah';
+        return view ('teachers.show', [
+            'title' => $title
+        ]);
     }
 
     public function create()
     {
-        return "Menampilkan halaman tambah guru";
+        $title = 'Catat Guru Baru - Sistem Sekolah';
+        return view('teachers.create', [
+            'title' => $title
+        ]);
     }
 
     public function edit()
     {
-        return "Menampilkan halaman edit guru";
+        $title = 'Ubah Data Guru - Sistem Sekolah';
+        return view('teachers.edit', [
+            'title' => $title
+        ]);
     }
 
     public function store()
