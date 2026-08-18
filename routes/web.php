@@ -70,22 +70,22 @@ Route::name('classes.')->prefix('classes')->group(function() {
     Route::get('/', IndexController::class)->name('index');
 
     // Halaman Detail Siswa
-    Route::get('//{id}', ShowController::class)->name('show');
+    Route::get('/{id}', ShowController::class)->name('show')->whereNumber('id');
 
     // Halaman Tambah Siswa
-    Route::get('//create', CreateController::class)->name('create');
+    Route::get('/create', CreateController::class)->name('create');
 
     // Halaman Edit Siswa
-    Route::get('//{id}/edit', EditController::class)->name('edit');
+    Route::get('/{id}/edit', EditController::class)->name('edit');
 
     //Logika Tambah Siswa
     Route::post('/', StoreController::class)->name('store');
 
     // Logika Edit Siswa
-    Route::put('//{id}', UpdateController::class)->name('update');
+    Route::put('/{id}', UpdateController::class)->name('update');
 
     // Logika Hapus Siswa
-    Route::delete('//{id}', DestroyController::class)->name('destroy');
+    Route::delete('/{id}', DestroyController::class)->name('destroy');
 });
 
 //Manajemen Data Kejuruan (Resource)
