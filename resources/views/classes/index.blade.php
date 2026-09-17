@@ -43,7 +43,7 @@
                             {{ $class['major'] }}
                         </td>
                         <td class="px-5 py-4">
-                            {{ $class['homeroom_teacher'] }}
+                            {{ $class['teacher_id'] }}
                         </td>
                         <td class="px-5 py-4">
                             <div class="flex justify-end gap-4 text-xs font-medium">
