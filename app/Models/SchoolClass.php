@@ -12,9 +12,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class SchoolClass extends Model
 {
+    
     use HasFactory;
     public function students()
     {
-        return $this->hasMany('Student::class', 'class_id', 'id');
+        return $this->hasMany(Student::class, 'class_id', 'id');
     }
 }

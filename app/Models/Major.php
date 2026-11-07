@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 #[Fillable('name')]
 class Major extends Model
 {
+    
     use HasFactory;
     public function students()
     {
