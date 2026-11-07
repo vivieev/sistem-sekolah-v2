@@ -28,6 +28,9 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                    /** @var array<int, array{id: int, name: string, grade: string, major: string, homeroom_teacher: string}> $classes */
+                    @endphp
                     @foreach ($classes as $class)
                     <tr class="border-b border-[#EFEDE6] hover:bg-[#FAF9F5]">
                         <td class="px-5 py-4 font-display text-lg text-[#A16207]">
