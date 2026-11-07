@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         $userStudentEmail = 'grachia@ski.sch.id';
 
         //User Teacher
-        User::updateCreate(
+        User::updateOrCreate(
             ['email' => $userTeacherEmail],
             [
                 'name' => 'Richard',
@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
         );
 
         //User Student
-        User::updateCreate(
+        User::updateOrCreate(
             ['email' => $userStudentEmail],
             [
                 'name' => 'Grachia',
